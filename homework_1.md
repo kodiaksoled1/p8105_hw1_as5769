@@ -63,3 +63,39 @@ as.numeric(pull(hw1_pb1_df, vec_factor))
 as.numeric(pull(hw1_pb1_df, vec_logical))
 as.numeric(pull(hw1_pb1_df, vec_char))
 ```
+
+Since we just found we can convert a logical vector into a numeric
+vector, this allows us to then multiply our random sample by the result:
+
+``` r
+#
+vec_logical = as.numeric(pull(hw1_pb1_df, vec_logical)) 
+vec_logical * (pull(hw1_pb1_df, sample))
+```
+
+    ## [1] 0.0000000 0.1315312 0.0000000 0.8867848 0.1169713 0.3186301 0.0000000
+    ## [8] 0.7145327
+
+Furthermore, we can also convert the logical vector into a factor
+vector. However, a factor vector cannot be multiplied and the output
+will again show NA’s. Thus, we cannot multiple the factor vector by our
+random sample:
+
+``` r
+vec_factor = as.factor(pull(hw1_pb1_df, vec_logical))
+vec_factor * (pull(hw1_pb1_df, sample))
+```
+
+    ## [1] NA NA NA NA NA NA NA NA
+
+Nonetheless, by converting the logical vector into a factor vector and
+then into a numeric vector, now we can multiply the result by our random
+sample:
+
+``` r
+vec_numeric = as.numeric(vec_factor) 
+vec_numeric * (pull(hw1_pb1_df, sample))
+```
+
+    ## [1] -0.50219235  0.26306233 -0.07891709  1.77356962  0.23394254  0.63726018
+    ## [7] -0.58179068  1.42906542
