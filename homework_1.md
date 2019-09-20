@@ -99,3 +99,23 @@ vec_numeric * (pull(hw1_pb1_df, sample))
 
     ## [1] -0.50219235  0.26306233 -0.07891709  1.77356962  0.23394254  0.63726018
     ## [7] -0.58179068  1.42906542
+
+**HW Problem 2**
+
+*Creating a Dataframe*
+
+This second dataframe is comprised of two random samples (x and y) of
+size 500 from a standard normal distribution, a logical vector that
+indicates whether x + y \> 1, and the coerced numeric and factor vectors
+of the previous logical vector:
+
+``` r
+set.seed(100)
+hw1_pb2_df = tibble(
+  x = rnorm(500, mean = 0, sd = 1),
+  y = rnorm(500, mean = 0, sd = 1),
+  vec_logical = c(x + y > 1),
+  vec_numeric = as.numeric(vec_logical),
+  vec_factor = as.factor(vec_logical)
+)
+```

@@ -70,3 +70,20 @@ Nonetheless, by converting the logical vector into a factor vector and then into
 vec_numeric = as.numeric(vec_factor) 
 vec_numeric * (pull(hw1_pb1_df, sample))
 ```
+
+**HW Problem 2**
+
+_Creating a Dataframe_
+
+This second dataframe is comprised of two random samples (x and y) of size 500 from a standard normal distribution, a logical vector that indicates whether x + y > 1, and the coerced numeric and factor vectors of the previous logical vector:
+```{r}
+set.seed(100)
+hw1_pb2_df = tibble(
+  x = rnorm(500, mean = 0, sd = 1),
+  y = rnorm(500, mean = 0, sd = 1),
+  vec_logical = c(x + y > 1),
+  vec_numeric = as.numeric(vec_logical),
+  vec_factor = as.factor(vec_logical)
+)
+```
+
