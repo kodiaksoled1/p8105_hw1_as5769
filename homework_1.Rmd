@@ -10,3 +10,16 @@ output: github_document
 ```{r setup, include = FALSE}
 library(tidyverse)
 ```
+
+_Creating a Dataframe_
+
+The following dataframe is comprised of a random sample size of 8 from a standard normal distribution, a logical vector whose elements of the sample are greater than 0, a character vector of length 8, and a factor vector of length 8 with 3 different factor "levels": 
+```{r}
+set.seed(100)
+hw1_pb1_df = tibble(
+  sample = rnorm(8, mean = 0, sd = 1), 
+  vec_logical = c(sample > 0),
+  vec_char = c("one", "two", "three", "four", "five", "six", "seven", "eight"),
+  vec_factor = factor(c("low", "low", "low", "med", "med", "med", "high", "high"))
+)
+```
