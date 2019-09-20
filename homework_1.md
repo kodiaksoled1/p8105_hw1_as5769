@@ -138,3 +138,45 @@ median(pull(hw1_pb2_df, x))
 sd(pull(hw1_pb2_df, x))
 sum(pull(hw1_pb2_df, vec_logical), na.rm=TRUE)/500
 ```
+
+*Making Scatterplots of the Dataframe*
+
+Below is a scatterplot of our two random samples x and y. The logical
+variable is colored with teal to indicate values where x + y \> 1 and
+peach to indicate values where x + y \<=
+1:
+
+``` r
+ggplot(hw1_pb2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
+```
+
+![](homework_1_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+I will now export this scatterplot to my project directory using the
+following code:
+
+``` r
+ggsave("hw1_pb2_df.pdf", width = 4, height = 6)
+```
+
+This next scatterplot of our two random samples x and y is colored with
+a gradient of black to blue to represent the continuous nature of a
+numeric
+variable:
+
+``` r
+ggplot(hw1_pb2_df, aes(x = x, y = y, color = vec_numeric)) + geom_point()
+```
+
+![](homework_1_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+This last scatterplot of our two random samples x and y is similarly
+colored in the same fashion as the first scatterplot as a factor
+variable similarly uses categories to indicate which values are x + y \>
+1 and which values are x + y \<= 1:
+
+``` r
+ggplot(hw1_pb2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
+```
+
+![](homework_1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
