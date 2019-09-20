@@ -48,3 +48,18 @@ the following:
 mean_vec_char = mean(pull(hw1_pb1_df, vec_char))
 mean_vec_factor = mean(pull(hw1_pb1_df, vec_factor))
 ```
+
+*Converting Variables*
+
+When we convert a logical and factor variable into a numeric variable,
+we can yield a numeric output for each. However, when we convert a
+character variable into a numeric variable, the output shows NA’s. This
+explains why we could not take the mean of this variable above. The code
+to convert these variables into a numeric variable would look like the
+following:
+
+``` r
+as.numeric(pull(hw1_pb1_df, vec_factor))
+as.numeric(pull(hw1_pb1_df, vec_logical))
+as.numeric(pull(hw1_pb1_df, vec_char))
+```
