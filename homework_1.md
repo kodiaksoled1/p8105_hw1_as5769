@@ -180,3 +180,12 @@ ggplot(hw1_pb2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
 ```
 
 ![](homework_1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+*Comment on Color Scales*
+
+In summary, the three scatterplot’s color scales represent the type of
+variable in each respective scatterplot. Thus, the first and third
+scatterplots (vec\_factor and vec\_logical) have two distinct colors
+that represents categorical data within a factor and logical vector. The
+second scatterplot (vec\_numeric) has a gradient which represents
+continuous data of a numeric vector

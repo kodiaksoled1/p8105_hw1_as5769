@@ -126,4 +126,8 @@ This last scatterplot of our two random samples x and y is similarly colored in 
 ggplot(hw1_pb2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
 ```
 
+_Comment on Color Scales_
+
+In summary, the three scatterplot’s color scales represent the type of variable in each respective scatterplot. Thus, the first and third scatterplots (vec_factor and vec_logical) have two distinct colors that represents categorical data within a factor and logical vector. The second scatterplot (vec_numeric) has a gradient which represents continuous data of a numeric vector
+
 
