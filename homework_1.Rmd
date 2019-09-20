@@ -87,3 +87,21 @@ hw1_pb2_df = tibble(
 )
 ```
 
+_Describing the Dataframe_
+
+* The dataset has `r nrow(hw1_pb2_df)*ncol(hw1_pb2_df)` variables (`r nrow(hw1_pb2_df)` rows and `r ncol(hw1_pb2_df)` columns). 
+* The mean of x is `r mean(pull(hw1_pb2_df, x))`.
+* The median of x is `r median(pull(hw1_pb2_df, x))`.
+* The standard deviation of x is `r sd(pull(hw1_pb2_df, x))`.
+* The proportion of cases where x + y > 1 is `r sum(pull(hw1_pb2_df, vec_logical), na.rm=TRUE)/500`.
+
+The code that was used to find the above attributes about the second dataframe is as follows: 
+```{r eval = FALSE}
+nrow(hw1_pb2_df)*ncol(hw1_pb2_df)
+mean(pull(hw1_pb2_df, x))
+median(pull(hw1_pb2_df, x))
+sd(pull(hw1_pb2_df, x))
+sum(pull(hw1_pb2_df, vec_logical), na.rm=TRUE)/500
+```
+
+

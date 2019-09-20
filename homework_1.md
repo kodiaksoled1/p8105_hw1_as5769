@@ -119,3 +119,22 @@ hw1_pb2_df = tibble(
   vec_factor = as.factor(vec_logical)
 )
 ```
+
+*Describing the Dataframe*
+
+  - The dataset has 2500 variables (500 rows and 5 columns).
+  - The mean of x is -0.0376074.
+  - The median of x is -0.0600876.
+  - The standard deviation of x is 1.0049216.
+  - The proportion of cases where x + y \> 1 is 0.242.
+
+The code that was used to find the above attributes about the second
+dataframe is as follows:
+
+``` r
+nrow(hw1_pb2_df)*ncol(hw1_pb2_df)
+mean(pull(hw1_pb2_df, x))
+median(pull(hw1_pb2_df, x))
+sd(pull(hw1_pb2_df, x))
+sum(pull(hw1_pb2_df, vec_logical), na.rm=TRUE)/500
+```
